@@ -1,0 +1,6 @@
+2021-07-20 08:11:17.877  WARN 20764 --- [demoapp housekeeper] com.zaxxer.hikari.pool.HikariPool        : demoapp - Thread starvation or clock leap detected (housekeeper delta=10h32m38s259ms280µs900ns).
+2021-07-20 11:29:05.837  WARN 20764 --- [demoapp housekeeper] com.zaxxer.hikari.pool.HikariPool        : demoapp - Thread starvation or clock leap detected (housekeeper delta=3m14s836ms780µs100ns).
+2021-07-20 13:07:03.878  WARN 20764 --- [demoapp housekeeper] com.zaxxer.hikari.pool.HikariPool        : demoapp - Thread starvation or clock leap detected (housekeeper delta=4m56s533ms270µs500ns).
+2021-07-20 14:44:13.713  WARN 20764 --- [demoapp housekeeper] com.zaxxer.hikari.pool.HikariPool        : demoapp - Thread starvation or clock leap detected (housekeeper delta=1h1m9s313ms215µs700ns).
+2021-07-20 15:28:33.260  WARN 20764 --- [demoapp housekeeper] com.zaxxer.hikari.pool.HikariPool        : demoapp - Thread starvation or clock leap detected (housekeeper delta=11m19s42ms177µs).
+2021-07-20 17:30:10.834  WARN 20764 --- [demoapp housekeeper] com.zaxxer.hikari.pool.HikariPool        : demoapp - Thread starvation or clock leap detected (housekeeper delta=1h1m36s605ms339µs600ns).

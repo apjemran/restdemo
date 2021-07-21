@@ -2,19 +2,29 @@ package com.example.demo;
 
 import java.util.stream.Stream;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.example.demo.entity.User;
-import com.example.demo.entity.UserRepository;
+import com.example.demo.usermgmt.entity.User;
+import com.example.demo.usermgmt.entity.UserRepository;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.example.demo")
+@EnableJpaRepositories("com.example.demo.usermgmt.entity")
+@EntityScan("com.example.demo.usermgmt.entity")
 public class RestdemoApplication {
-
+	
 	public static void main(String[] args) {
 		SpringApplication.run(RestdemoApplication.class, args);
+	}
+	
+	@Bean
+	public ModelMapper modelMapper() {
+		return new ModelMapper();
 	}
 	
 	 @Bean

@@ -1,4 +1,4 @@
-package com.example.demo.restcontroller;
+package com.example.demo.controller.usermgmt;
 
 import java.util.List;
 
@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.entity.User;
+import com.example.demo.model.usermgmt.UserDetails;
 import com.example.demo.service.usermgmt.UserMgmtService;
 
 
@@ -31,17 +32,20 @@ public class UserController {
     private UserMgmtService userMgmtService;
 
     @GetMapping("/users")
-    public List<User> getUsers() {
-    	logger.debug("Start of getting user");
-    	logger.debug("This is a debug message");
-        logger.info("This is an info message");
-        logger.warn("This is a warn message");
-        logger.error("This is an error message");
+    public List<UserDetails> getUsers() {
+    	logger.debug("Start of getting user");    	
         return userMgmtService.findAll();
     }
 
-    @PostMapping("/users")
-    public void addUser(@RequestBody User user) {
-    	userMgmtService.save(user);
+    @PostMapping("/adduser")
+    public void addUser(@RequestBody UserDetails userDetails) {
+    	logger.debug("Start add user");
+    	userMgmtService.save(userDetails);
+    }
+    
+    @GetMapping("/userbyid")
+    public void findUserById(@RequestParam Long id) {
+    	logger.debug("Start searching user by Id");
+    	userMgmtService.findUserById(id);
     }
 }

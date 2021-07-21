@@ -21,5 +21,9 @@ The following guides illustrate how to use some features concretely:
 * [Spring Boot Starters for Azure](https://docs.microsoft.com/en-us/azure/developer/java/spring-framework/spring-boot-starters-for-azure)
 * [Convert property to YAML](http://www.allencoders.online/converters/props2yaml)
 * [SonarQube LTS](https://www.sonarqube.org/)
+* [Sonar Lint] (https://www.sonarlint.org/)
+* [Sonar Lint Eclipse Plugin] (https://marketplace.eclipse.org/content/sonarlint)
+* [Model Mapper](http://modelmapper.org/)
+* [Performance of mapping frameworks] (https://www.baeldung.com/java-performance-mapping-frameworks)
 
 

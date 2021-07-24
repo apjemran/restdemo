@@ -1,0 +1,9 @@
+logger.info("Saving user with name: {} and email: {}", userDetails.getName(), userDetails.getEmail());
+
+UserDetails userDetail = mapper.map(user, UserDetails.class);
+return userDetail;
+
+to 
+
+return mapper.map(user, UserDetails.class);
+

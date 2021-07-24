@@ -1,7 +1,8 @@
-package com.example.demo.service.usermgmt;
+package com.example.demo.usermgmt.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
@@ -9,9 +10,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.usermgmt.UserDetails;
 import com.example.demo.usermgmt.entity.User;
 import com.example.demo.usermgmt.entity.UserRepository;
+import com.example.demo.usermgmt.model.UserDetails;
 
 import lombok.AllArgsConstructor;
 
@@ -23,6 +24,7 @@ private static final Logger logger = LoggerFactory.getLogger(UserMgmtServiceImpl
 	
 	@Autowired
 	private UserRepository userRepository;
+	@Autowired
     private ModelMapper mapper;   
 
     @Override
@@ -39,9 +41,14 @@ private static final Logger logger = LoggerFactory.getLogger(UserMgmtServiceImpl
 	}	
 
 	@Override
-	public void findUserById(Long id) {
+	public UserDetails findUserById(Long id) {
 		logger.debug("Start finding userid: {}", id);
-		userRepository.findById(id);
+		Optional<User> result = userRepository.findById(id);
+		User user = null;
+		if(result.isPresent()) {
+			user = result.get();			
+		}
+		return mapper.map(user, UserDetails.class);				
 	}
 	
 	private List<UserDetails> mapToModel(Iterable<User> iterable){		

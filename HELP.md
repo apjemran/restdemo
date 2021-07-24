@@ -25,5 +25,6 @@ The following guides illustrate how to use some features concretely:
 * [Sonar Lint Eclipse Plugin] (https://marketplace.eclipse.org/content/sonarlint)
 * [Model Mapper](http://modelmapper.org/)
 * [Performance of mapping frameworks] (https://www.baeldung.com/java-performance-mapping-frameworks)
+* [Exception Handling Best Practices] (https://howtodoinjava.com/java/exception-handling/best-practices-for-for-exception-handling/)
 
 

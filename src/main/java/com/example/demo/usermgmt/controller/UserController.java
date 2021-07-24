@@ -1,10 +1,11 @@
-package com.example.demo.controller.usermgmt;
+package com.example.demo.usermgmt.controller;
 
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.usermgmt.UserDetails;
-import com.example.demo.service.usermgmt.UserMgmtService;
+import com.example.demo.usermgmt.model.UserDetails;
+import com.example.demo.usermgmt.service.UserMgmtService;
 
 
 
 
 
 @RestController
-//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/usermgmt")
 public class UserController {
 	
@@ -44,8 +45,8 @@ public class UserController {
     }
     
     @GetMapping("/userbyid")
-    public void findUserById(@RequestParam Long id) {
-    	logger.debug("Start searching user by Id");
-    	userMgmtService.findUserById(id);
+    public UserDetails findUserById(@RequestParam Long id) {
+    	logger.debug("Start searching user by Id: {}",id);
+    	return userMgmtService.findUserById(id);
     }
 }

@@ -1,13 +1,13 @@
-package com.example.demo.service.usermgmt;
+package com.example.demo.usermgmt.service;
 
 import java.util.List;
 
-import com.example.demo.model.usermgmt.UserDetails;
+import com.example.demo.usermgmt.model.UserDetails;
 
 public interface UserMgmtService {
 	
 	public List<UserDetails> findAll();
 	public void save(UserDetails userDetails);
-	public void findUserById(Long id);	
+	public UserDetails findUserById(Long id);	
 
 }
